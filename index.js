@@ -91,6 +91,10 @@ let grid = document.querySelector(".grid-container");
 grid.addEventListener("click", (event) => {
   let target = event.target;
   let str = target.className;
+  if (target.nodeName == "SPAN") {
+    target = target.parentElement;
+    str = target.className;
+  }
   if (
     typeof target.className === "string" &&
     target.className.includes("grid-item") &&
